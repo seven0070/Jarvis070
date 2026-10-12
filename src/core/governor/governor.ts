@@ -1,6 +1,1 @@
-export class Governor {
-  validate(goal:any){
-    if (!goal.proof) throw new Error('GOAL REJECTED: No proof — atomic write + test + screenshot required');
-    return true;
-  }
-}
+export class Governor { validate(g:any){ if(!g.proof) throw new Error('No proof'); return true; } }

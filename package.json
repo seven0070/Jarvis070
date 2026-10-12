@@ -1,17 +1,24 @@
 {
-  "name": "jarvis-070-god",
-  "version": "4.0.0-god-115",
+  "name": "jarvis-070-god-full",
+  "version": "4.0.0-full",
+  "main": "src/ui/main.js",
   "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
-    "mcp:setup": "tsx scripts/setup-mcp.ts",
-    "mcp:test": "tsx scripts/check-parity.ts",
-    "build": "pkg src/index.ts --output Jarvis070-GOD.exe",
-    "heartbeat": "tsx src/core/sovereign/heartbeat-god.ts"
+    "electron": "electron src/ui/main.js",
+    "build:exe": "pkg src/index.ts --targets node18-win-x64 --output dist/Jarvis070-GOD.exe",
+    "build:installer": "electron-builder --win nsis --config electron-builder.json",
+    "full": "npm run build:exe && npm run build:installer",
+    "mcp:test": "tsx scripts/check-parity.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
     "dotenv": "^16.4.5",
-    "tsx": "^4.19.1"
+    "tsx": "^4.19.1",
+    "electron": "^33.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.0",
+    "pkg": "^5.8.1"
   }
 }

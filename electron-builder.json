@@ -1,0 +1,7 @@
+{
+  "appId": "com.jarvis070.god",
+  "productName": "JARVIS 070 GOD",
+  "directories": { "output": "dist" },
+  "files": ["src/**/*", "package.json"],
+  "win": { "target": "nsis" }
+}
